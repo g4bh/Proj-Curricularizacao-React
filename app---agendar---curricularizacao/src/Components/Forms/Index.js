@@ -1,90 +1,90 @@
-import React, { Component, useState } from 'react';
-import { TextInput, View, Text} from 'react-native';
-import Botao from '../Botao/Index'; 
+import React from 'react';
+import { TextInput, View, Text } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+import { styles } from './Styles';
 
-import {Picker} from '@react-native-picker/picker';
-
-import {styles} from './Styles'
-
-function FormAgendamento(props) {
-    const [tipoServico, setTipoServico] = useState(1)
-    const [dataServico, setDataServico] = useState(1)
-    const [horaServico, setHoraServico] = useState(1)
-
+function FormAgendamento({
+  tipoServico, setTipoServico,
+  dataServico, setDataServico,
+  horaServico, setHoraServico,
+  cep, setCep,
+  endereco, setEndereco,
+  numero, setNumero,
+  cidade, setCidade,
+  acolhedor, setAcolhedor,
+}) {
   return (
     <View>
-    <Text style={styles.tituloInput}>Tipo de serviço</Text>
-      <View>
-        <Picker
+      <Text style={styles.tituloInput}>Tipo de serviço</Text>
+      <Picker
         selectedValue={tipoServico}
-        onValueChange={ (itemValue, itemIndex) => setTipoServico(itemValue) }
-        style={styles.input}
-        >
-          <Picker.Item key={1} value={1} label="Visita Técnica" />
-          <Picker.Item key={2} value={2} label="Higienização" />
-        </Picker>
-    </View>
+        onValueChange={setTipoServico}
+        style={styles.input}>
+        <Picker.Item value="" label="Selecione o tipo de visita" />
+        <Picker.Item value="Visita Técnica" label="Visita Técnica" />
+        <Picker.Item value="Higienização" label="Higienização" />
+      </Picker>
 
-    <Text style={styles.tituloInput}>Data do serviço</Text>
-    <Text style={styles.subtituloInput}>As datas apresentadas serão as datas que a empresa terá a disponibilidade de executar o serviço</Text>
-      <View>
+      <Text style={styles.tituloInput}>Data do serviço</Text>
       <Picker
         selectedValue={dataServico}
-        onValueChange={ (itemValue, itemIndex) => setDataServico(itemValue) }
-        style={styles.input}
-        >
-          <Picker.Item key={1} value={1} label="Segunda, 14 de abril" />
-          <Picker.Item key={2} value={2} label="Terça, 19 de maio" />
-          <Picker.Item key={3} value={3} label="Quinta, 5 de junho" />
-        </Picker>
-    </View>
+        onValueChange={setDataServico}
+        style={styles.input}>
+        <Picker.Item value="" label="Selecione a data" />
+        <Picker.Item value="2025-06-15" label="Segunda, 15 de junho" />
+        <Picker.Item value="2025-06-20" label="Sábado, 20 de junho" />
+      </Picker>
 
-
-    <Text style={styles.tituloInput}>Hora do serviço</Text>
-      <View>
+      <Text style={styles.tituloInput}>Hora do serviço</Text>
       <Picker
         selectedValue={horaServico}
-        onValueChange={ (itemValue, itemIndex) => setHoraServico(itemValue) }
-        style={styles.input}
-        >
-          <Picker.Item key={1} value={1} label="10:00" />
-          <Picker.Item key={2} value={2} label="14:00" />
-          <Picker.Item key={3} value={3} label="16:00" />
-        </Picker>
-    </View>
+        onValueChange={setHoraServico}
+        style={styles.input}>
+        <Picker.Item value="" label="Selecione o horário" />
+        <Picker.Item value="10:00" label="10:00" />
+        <Picker.Item value="14:00" label="14:00" />
+        <Picker.Item value="16:00" label="16:00" />
+      </Picker>
 
-
-    <Text style={styles.tituloInput}>Endereço</Text>
-      <View>
+    <Text style={styles.tituloInput}>Cep</Text>
       <TextInput
         style={styles.input}
+        value={cep}
+        onChangeText={setCep}
       />
-    </View>
 
-    <Text style={styles.tituloInput}>N° da residência</Text>
-      <View>
+      <Text style={styles.tituloInput}>Endereço</Text>
       <TextInput
         style={styles.input}
+        value={endereco}
+        onChangeText={setEndereco}
       />
-    </View>
 
-    <Text style={styles.tituloInput}>Cidade</Text>
-      <View>
+      <Text style={styles.tituloInput}>N° da residência</Text>
       <TextInput
         style={styles.input}
+        value={numero}
+        onChangeText={setNumero}
       />
-    </View>
 
-    <Text style={styles.tituloInput}>Nome do acolhedor</Text>
-    <Text style={styles.subtituloInput}>Digite o nome de quem estará disponível para atender o instalador no dia marcado</Text>
-      <View>
+      <Text style={styles.tituloInput}>Cidade</Text>
       <TextInput
         style={styles.input}
+        value={cidade}
+        onChangeText={setCidade}
       />
-    </View>
 
+      <Text style={styles.tituloInput}>Nome do acolhedor</Text>
+      <Text style={styles.subtituloInput}>
+        Digite o nome de quem estará disponível para atender o instalador no dia marcado
+      </Text>
+      <TextInput
+        style={styles.input}
+        value={acolhedor} 
+        onChangeText={setAcolhedor}
+      />
     </View>
   );
 }
 
-export default FormAgendamento
+export default FormAgendamento;

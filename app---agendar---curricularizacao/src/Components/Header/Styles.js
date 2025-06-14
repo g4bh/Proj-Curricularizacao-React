@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
    header: {
     backgroundColor: '#FBFBFB',
     width: '100%',
-    marginTop: 25,
+    marginTop: 10,
     padding: 10,
    },
   caixaLogoSeta: {

@@ -10,6 +10,7 @@ function Input(props){
         placeholder={props.placeholder}
         placeholderTextColor={props.color}
         keyboardType={props.tipo}
+        onChangeText={props.variavel}
       />
     </View>
   )

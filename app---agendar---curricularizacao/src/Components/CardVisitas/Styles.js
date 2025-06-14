@@ -12,15 +12,16 @@ const styles = StyleSheet.create({
 },
 
 tituloCard: {
-  fontSize: 20,
+  fontSize: 25,
   fontWeight: '800',
-  color: '#2E547F',
+  color: '#4A87CC',
 },
 
 dataCard: {
-  fontSize: 14,
+  fontSize: 17,
   fontWeight: '400',
   color: '#5A6B81',
+  marginTop: 5,
 },
 
 botaoVer: {

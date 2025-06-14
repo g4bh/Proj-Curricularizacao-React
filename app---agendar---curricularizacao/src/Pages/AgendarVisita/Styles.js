@@ -30,7 +30,8 @@ header: {
 },
 areaBotao: {
     marginTop: -45,
-    padding: 20
+    padding: 20,
+    marginBottom: 100
   },
 headerLeft:{
 flex: 1

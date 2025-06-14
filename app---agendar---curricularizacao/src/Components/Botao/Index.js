@@ -9,6 +9,7 @@ function Botao(props){
           title = {props.titulo}
           color = {props.cor}
           padding = {props.pad}
+          onPress={props.onPress}
         />    
       </View>
   )

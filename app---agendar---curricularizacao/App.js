@@ -1,20 +1,11 @@
 import {View, Text} from 'react-native';
+import React from 'react';
 
-import Login from './src/Pages/Login/Index'
-import Cadastro from './src/Pages/Cadastro/Index'
-import Home from './src/Pages/Home/Index'
-import AgendaMarcada from './src/Pages/AgendasMarcadas/Index'
-import AgendarVisita from './src/Pages/AgendarVisita/Index'
-import DescricaoAgenda from './src/Pages/DescricaoAgenda/Index'
-import Perfil from './src/Pages/Perfil/Index'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Menu from './src/Components/Menu/Index'
 
-function App(){
-
-return(
-    <DescricaoAgenda /> 
-)
-
+export default function App() {
+  return <Menu />;
+ 
 }
-
-export default App;
